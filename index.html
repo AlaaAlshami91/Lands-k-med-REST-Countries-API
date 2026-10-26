@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landsøk med REST Countries API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <h1>🌍 Landsøk</h1>
+      <p>Søk etter et land for å hente fakta og flagg.</p>
+    </header>
+
+    <!-- Søkeskjema -->
+    <form id="searchForm" class="search-box">
+      <input 
+        type="text" 
+        id="countryInput" 
+        placeholder="Skriv inn land (f.eks. canada, norway)..." 
+        required
+        autocomplete="off"
+      >
+      <button type="submit" id="searchBtn">Søk</button>
+    </form>
+
+    <!-- Statusmelding / Feilmelding -->
+    <div id="statusMessage" class="status-message hidden" aria-live="polite"></div>
+
+    <!-- Landkort -->
+    <div id="countryCard" class="card hidden">
+      <div class="card-header">
+        <!-- Flagg og navn (obligatorisk) -->
+        <img id="countryFlag" src="" alt="Landets flagg" class="flag-img">
+        <div class="header-titles">
+          <h2 id="countryName"></h2>
+          <span id="officialName" class="official-name"></span>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Fakta-liste (minst 7 opplysninger) -->
+      <ul class="facts-list">
+        <li>
+          <span class="label">🏛️ Hovedstad:</span>
+          <span id="capital" class="value"></span>
+        </li>
+        <li>
+          <span class="label">🗺️ Kontinent / Region:</span>
+          <span id="region" class="value"></span>
+        </li>
+        <li>
+          <span class="label">👥 Innbyggertall:</span>
+          <span id="population" class="value"></span>
+        </li>
+        <li>
+          <span class="label">🗣️ Språk:</span>
+          <span id="languages" class="value"></span>
+        </li>
+        <li>
+          <span class="label">💰 Valuta:</span>
+          <span id="currencies" class="value"></span>
+        </li>
+        <li>
+          <span class="label">📐 Areal:</span>
+          <span id="area" class="value"></span>
+        </li>
+        <li>
+          <span class="label">⏰ Tidssone:</span>
+          <span id="timezones" class="value"></span>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Kobler til din JavaScript-fil -->
+  <script src="index.js"></script>
+</body>
+</html>
